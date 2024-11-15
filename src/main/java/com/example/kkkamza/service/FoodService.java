@@ -2,7 +2,6 @@ package com.example.kkkamza.service;
 
 
 import com.example.kkkamza.dto.request.RegisterFoodRequestDto;
-import com.example.kkkamza.dto.request.SearchFoodRequestDto;
 import com.example.kkkamza.entity.Food;
 import com.example.kkkamza.entity.Market;
 import com.example.kkkamza.repository.FoodRepository;
@@ -22,6 +21,11 @@ public class FoodService {
     private final FoodRepository foodRepository;
     private final MarketRepository marketRepository;
 
+    /**
+     * 음식 정보 등록
+     * @param requestDto
+     * @return
+     */
     public String registerFood(RegisterFoodRequestDto requestDto){
         Food food = new Food(requestDto);
 
@@ -34,6 +38,11 @@ public class FoodService {
         return "Food register success";
     }
 
+    /**
+     * 음식 정보 검색
+     * @param requestDto
+     * @return
+     */
     public List<Food> searchFood(String requestDto){
 
         return foodRepository.findByFoodNameContaining(requestDto);

@@ -2,6 +2,7 @@ package com.example.kkkamza.entity;
 
 
 import com.example.kkkamza.dto.request.RegisterMarketRequestDto;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -29,6 +30,7 @@ public class Market {
     private String phoneNumber;
 
     @OneToMany(mappedBy = "market", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonBackReference
     private List<Food> foodList = new ArrayList<>();
 
     public Market() {}

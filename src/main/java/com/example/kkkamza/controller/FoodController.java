@@ -2,10 +2,8 @@ package com.example.kkkamza.controller;
 
 
 import com.example.kkkamza.dto.request.RegisterFoodRequestDto;
-import com.example.kkkamza.dto.request.SearchFoodRequestDto;
 import com.example.kkkamza.entity.Food;
 import com.example.kkkamza.service.FoodService;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

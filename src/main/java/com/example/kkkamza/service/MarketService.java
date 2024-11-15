@@ -14,6 +14,12 @@ public class MarketService {
 
     private final MarketRepository marketRepository;
 
+
+    /**
+     * 상점 등록
+     * @param requestDto
+     * @return
+     */
     public String registerMarket(RegisterMarketRequestDto requestDto){
         Market market = new Market(requestDto);
 

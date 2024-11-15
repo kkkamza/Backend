@@ -2,6 +2,7 @@ package com.example.kkkamza.entity;
 
 import com.example.kkkamza.dto.request.RegisterFoodRequestDto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -36,7 +37,7 @@ public class Food {
 
 
     @ManyToOne
-    @JsonIgnore
+    @JsonManagedReference
     private Market market;
 
     public Food() {}

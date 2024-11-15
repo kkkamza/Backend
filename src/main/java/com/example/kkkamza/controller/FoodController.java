@@ -26,4 +26,10 @@ public class FoodController {
 
         return foodService.searchFood(requestDto);
     }
+
+    @GetMapping("/food/{foodId}")
+    public Food selectFood(@PathVariable Long foodId){
+
+        return foodService.selectFood(foodId);
+    }
 }

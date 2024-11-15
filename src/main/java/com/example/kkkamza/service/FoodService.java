@@ -47,4 +47,13 @@ public class FoodService {
 
         return foodRepository.findByFoodNameContaining(requestDto);
     }
+
+    /**
+     * 음식 선택
+     */
+    public Food selectFood(Long foodId){
+
+        return foodRepository.findById(foodId).orElseThrow(
+                () -> new IllegalArgumentException("해당 음식이 확인되지 않습니다."));
+    }
 }

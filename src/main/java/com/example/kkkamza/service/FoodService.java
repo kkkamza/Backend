@@ -2,6 +2,7 @@ package com.example.kkkamza.service;
 
 
 import com.example.kkkamza.dto.request.RegisterFoodRequestDto;
+import com.example.kkkamza.dto.request.SearchFoodRequestDto;
 import com.example.kkkamza.entity.Food;
 import com.example.kkkamza.entity.Market;
 import com.example.kkkamza.repository.FoodRepository;
@@ -9,6 +10,8 @@ import com.example.kkkamza.repository.MarketRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 
 @Service
@@ -29,5 +32,10 @@ public class FoodService {
         foodRepository.save(food);
 
         return "Food register success";
+    }
+
+    public List<Food> searchFood(String requestDto){
+
+        return foodRepository.findByFoodNameContaining(requestDto);
     }
 }

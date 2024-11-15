@@ -2,11 +2,14 @@ package com.example.kkkamza.controller;
 
 
 import com.example.kkkamza.dto.request.RegisterFoodRequestDto;
+import com.example.kkkamza.dto.request.SearchFoodRequestDto;
+import com.example.kkkamza.entity.Food;
 import com.example.kkkamza.service.FoodService;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -15,8 +18,14 @@ public class FoodController {
     private final FoodService foodService;
 
     @PostMapping("/food/register")
-    public String registerfood(@RequestBody RegisterFoodRequestDto requestDto){
+    public String registerFood(@RequestBody RegisterFoodRequestDto requestDto){
 
         return foodService.registerFood(requestDto);
+    }
+
+    @GetMapping("/food/search")
+    public List<Food> searchFood(@RequestParam String requestDto){
+
+        return foodService.searchFood(requestDto);
     }
 }

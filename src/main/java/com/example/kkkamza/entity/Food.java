@@ -1,6 +1,7 @@
 package com.example.kkkamza.entity;
 
 import com.example.kkkamza.dto.request.RegisterFoodRequestDto;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -33,7 +34,9 @@ public class Food {
     @Column(name = "number", nullable = false)
     private Integer number;
 
+
     @ManyToOne
+    @JsonIgnore
     private Market market;
 
     public Food() {}

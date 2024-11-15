@@ -1,6 +1,7 @@
 package com.example.kkkamza.controller;
 
 
+import com.example.kkkamza.dto.request.PaymentFoodRequest;
 import com.example.kkkamza.dto.request.RegisterFoodRequestDto;
 import com.example.kkkamza.entity.Food;
 import com.example.kkkamza.service.FoodService;
@@ -36,5 +37,15 @@ public class FoodController {
     @DeleteMapping("/food/{foodId}")
     public String deleteFood(@PathVariable Long foodId) {
         return foodService.deleteFood(foodId);
+    }
+
+    @PostMapping("/food/payment")
+    public String payment(@RequestBody PaymentFoodRequest request){
+        return foodService.payment(request);
+    }
+
+    @PostMapping("/abc")
+    public String start(){
+        return foodService.start();
     }
 }

@@ -13,7 +13,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class RegisterMarketRequestDto {
+public class UpdateMarketRequestDto {
 
     private String marketName; //상점 이름
     private String address; // 상점 주소

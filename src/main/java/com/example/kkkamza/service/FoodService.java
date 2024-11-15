@@ -62,6 +62,14 @@ public class FoodService {
     }
 
     /**
+     * 잉여 식량 목록 불러오기
+     * @return
+     */
+    public  List<Food>  getAllFoods() {
+        return foodRepository.findAll();
+    }
+
+    /**
      * 음식 정보 삭제
      * @param foodId 삭제할 음식 ID
      * @return
@@ -76,6 +84,7 @@ public class FoodService {
         // 삭제된 음식의 이름 반환 (예시: 음식 이름)
         return "삭제된 음식: " + food.getFoodName();
     }
+
 
     /**
      * 결제 요청
@@ -109,5 +118,6 @@ public class FoodService {
 
         return "ok";
     }
+
 
 }

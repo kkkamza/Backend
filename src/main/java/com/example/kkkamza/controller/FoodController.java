@@ -4,6 +4,7 @@ package com.example.kkkamza.controller;
 import com.example.kkkamza.dto.request.PaymentFoodRequest;
 import com.example.kkkamza.dto.request.RegisterFoodRequestDto;
 import com.example.kkkamza.entity.Food;
+import com.example.kkkamza.entity.Market;
 import com.example.kkkamza.service.FoodService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -53,4 +54,12 @@ public class FoodController {
     public Integer getPrice(){
         return foodService.getPrice();
     }
+
+    // 잉여 식량 목록 불러오기
+    @GetMapping("/food/list")
+    public List<Food> getAllFood() {
+        return foodService.getAllFoods();
+    }
+
+
 }

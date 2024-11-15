@@ -47,7 +47,6 @@ public class MarketController {
     // 상점 정보 목록 불러오기
     @GetMapping("/list")
     public List<Market> getAllMarkets() {
-        // 서비스에서 DB로부터 상점 목록을 가져옴
         return marketService.getAllMarkets();
     }
 

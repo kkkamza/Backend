@@ -30,7 +30,7 @@ public class MarketService {
 
     /**
      * 상점 수정
-     * @param requestDto
+     * @param updateRequestDto
      * @return
      */
     public Market updateMarket(Long marketId, UpdateMarketRequestDto updateRequestDto) {
@@ -38,7 +38,7 @@ public class MarketService {
                 .orElseThrow(() -> new IllegalArgumentException("Market not found with ID: " + marketId));
 
         // 새로운 정보로 업데이트
-        market.setName(updateRequestDto.getName());
+        market.setMarketName(updateRequestDto.getMarketName());
         market.setAddress(updateRequestDto.getAddress());
         market.setPhoneNumber(updateRequestDto.getPhoneNumber());
 

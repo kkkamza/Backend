@@ -11,8 +11,6 @@ import lombok.Setter;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 public class RegisterMarketRequestDto {
 
     private String marketName; //상점 이름

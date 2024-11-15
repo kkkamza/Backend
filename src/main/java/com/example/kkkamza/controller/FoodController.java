@@ -1,6 +1,7 @@
 package com.example.kkkamza.controller;
 
 
+import com.example.kkkamza.dto.request.PaymentFoodRequest;
 import com.example.kkkamza.dto.request.RegisterFoodRequestDto;
 import com.example.kkkamza.entity.Food;
 import com.example.kkkamza.entity.Market;
@@ -39,10 +40,26 @@ public class FoodController {
         return foodService.deleteFood(foodId);
     }
 
+    @PostMapping("/food/payment")
+    public String payment(@RequestBody PaymentFoodRequest request){
+        return foodService.payment(request);
+    }
+
+    @PostMapping("/abc")
+    public String start(){
+        return foodService.start();
+    }
+
+    @GetMapping("main")
+    public Integer getPrice(){
+        return foodService.getPrice();
+    }
+
     // 잉여 식량 목록 불러오기
     @GetMapping("/food/list")
     public List<Food> getAllFood() {
         return foodService.getAllFoods();
     }
+
 
 }

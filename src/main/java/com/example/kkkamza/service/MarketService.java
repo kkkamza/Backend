@@ -50,12 +50,12 @@ public class MarketService {
 
     /**
      * 상점 정보 확인
-     * @param marketId 상점 ID
+     * @param marketName 상점 ID
      * @return 조회된 상점 정보
      */
-    public Market findMarketInfo(Long marketId) {
-        return marketRepository.findById(marketId)
-                .orElseThrow(() -> new IllegalArgumentException("상점을 찾을 수 없습니다. ID: " + marketId));
+    public Long findMarketInfo(String marketName) {
+        Market market = marketRepository.findByMarketName(marketName);
+        return market.getMarketId();
     }
 
     /**
@@ -66,6 +66,10 @@ public class MarketService {
         // DB에서 모든 상점 정보 조회
         return marketRepository.findAll();
     }
+
+
+
+
 
 
 }

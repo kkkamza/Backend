@@ -38,10 +38,9 @@ public class MarketController {
     }
 
     // 상점 정보 확인
-    @GetMapping("/{marketId}")
-    public ResponseEntity<Market> getMarketInfo(@PathVariable Long marketId) {
-        Market market = marketService.findMarketInfo(marketId);
-        return ResponseEntity.ok(market);
+    @GetMapping("/{marketName}")
+    public Long getMarketInfo(@PathVariable String marketName) {
+        return marketService.findMarketInfo(marketName);
     }
 
     // 상점 정보 목록 불러오기
@@ -49,6 +48,7 @@ public class MarketController {
     public List<Market> getAllMarkets() {
         return marketService.getAllMarkets();
     }
+
 
 
 }

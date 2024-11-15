@@ -1,5 +1,6 @@
 package com.example.kkkamza.entity;
 
+import com.example.kkkamza.dto.request.RegisterFoodRequestDto;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -36,4 +37,13 @@ public class Food {
     private Market market;
 
     public Food() {}
+
+    public Food(RegisterFoodRequestDto requestDto){
+        this.foodName = requestDto.getFoodName();
+        this.price = requestDto.getPrice();
+        this.imageUrl = requestDto.getImageUrl();
+        this.description = requestDto.getDescription();
+        this.expirationdate = requestDto.getExpirationdate();
+        this.number = requestDto.getNumber();
+    }
 }

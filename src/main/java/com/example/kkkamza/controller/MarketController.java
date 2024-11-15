@@ -21,6 +21,7 @@ public class MarketController {
 
     private final MarketService marketService;
 
+
     // 상점 등록
     @PostMapping
     public String registerMarket(@RequestBody RegisterMarketRequestDto requestDto){
@@ -35,5 +36,9 @@ public class MarketController {
         Market updatedMarket = marketService.updateMarket(marketId, updateRequestDto);
         return new ResponseEntity<>(updatedMarket, HttpStatus.OK);
     }
+
+
+
+
 
 }

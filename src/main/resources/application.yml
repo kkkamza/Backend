@@ -12,9 +12,9 @@ spring:
   datasource:
     # MySQL
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/kkkamza
-    username: geunhee
-    password: 1234
+    url: jdbc:mysql://kkkamza.c7m2q0i8e4qd.eu-north-1.rds.amazonaws.com/kkkamza
+    username: root
+    password: kiop3150
 
   #     H2
   #      url:

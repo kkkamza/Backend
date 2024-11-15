@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 @RequiredArgsConstructor
@@ -54,6 +56,15 @@ public class MarketService {
     public Market findMarketInfo(Long marketId) {
         return marketRepository.findById(marketId)
                 .orElseThrow(() -> new IllegalArgumentException("상점을 찾을 수 없습니다. ID: " + marketId));
+    }
+
+    /**
+     * 상점 목록 불러오기
+     * @return
+     */
+    public List<Market> getAllMarkets() {
+        // DB에서 모든 상점 정보 조회
+        return marketRepository.findAll();
     }
 
 

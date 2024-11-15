@@ -46,4 +46,15 @@ public class MarketService {
         return marketRepository.save(market);
     }
 
+    /**
+     * 상점 정보 확인
+     * @param marketId 상점 ID
+     * @return 조회된 상점 정보
+     */
+    public Market findMarketInfo(Long marketId) {
+        return marketRepository.findById(marketId)
+                .orElseThrow(() -> new IllegalArgumentException("상점을 찾을 수 없습니다. ID: " + marketId));
+    }
+
+
 }

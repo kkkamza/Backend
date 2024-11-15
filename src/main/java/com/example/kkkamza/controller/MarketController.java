@@ -7,7 +7,6 @@ import com.example.kkkamza.service.MarketService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,5 +34,13 @@ public class MarketController {
         Market updatedMarket = marketService.updateMarket(marketId, updateRequestDto);
         return new ResponseEntity<>(updatedMarket, HttpStatus.OK);
     }
+
+    // 상점 정보 확인
+    @GetMapping("/{marketId}")
+    public ResponseEntity<Market> getMarketInfo(@PathVariable Long marketId) {
+        Market market = marketService.findMarketInfo(marketId);
+        return ResponseEntity.ok(market);
+    }
+
 
 }

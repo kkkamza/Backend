@@ -56,4 +56,20 @@ public class FoodService {
         return foodRepository.findById(foodId).orElseThrow(
                 () -> new IllegalArgumentException("해당 음식이 확인되지 않습니다."));
     }
+
+    /**
+     * 음식 정보 삭제
+     * @param foodId 삭제할 음식 ID
+     * @return
+     */
+    public String deleteFood(Long foodId) {
+        Food food = foodRepository.findById(foodId)
+                .orElseThrow(() -> new IllegalArgumentException("해당 음식을 찾을 수 없습니다. ID: " + foodId));
+
+        // 음식 삭제
+        foodRepository.delete(food);
+
+        // 삭제된 음식의 이름 반환 (예시: 음식 이름)
+        return "삭제된 음식: " + food.getFoodName();
+    }
 }

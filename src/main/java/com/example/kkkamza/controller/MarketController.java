@@ -36,17 +36,12 @@ public class MarketController {
         return new ResponseEntity<>(updatedMarket, HttpStatus.OK);
     }
 
-<<<<<<< HEAD
     // 상점 정보 확인
     @GetMapping("/{marketId}")
     public ResponseEntity<Market> getMarketInfo(@PathVariable Long marketId) {
         Market market = marketService.findMarketInfo(marketId);
         return ResponseEntity.ok(market);
     }
-=======
-
-
->>>>>>> dd76b4c88c3ce38a0f458526c913518d35853b57
 
 
 }

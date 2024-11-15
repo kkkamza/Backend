@@ -25,18 +25,5 @@ public class WebConfig {
         return new CorsFilter(source);
     }
 
-//    @Bean
-//    public WebMvcConfigurer corsConfigurer() {
-//        return new WebMvcConfigurer() {
-//            @Override
-//            public void addCorsMappings(CorsRegistry registry) {
-//                registry.addMapping("/**") // 모든 엔드포인트에 대해
-//                        .allowedOrigins("http://localhost:5173/", "http://kkamza.s3-website.ap-northeast-2.amazonaws.com/") // 허용할 도메인
-//                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // 허용할 HTTP 메서드
-//                        .allowedHeaders("*") // 허용할 헤더
-//                        .allowCredentials(true); // 인증 정보(쿠키 등) 허용 여부
-//            }
-//        };
-//    }
 }
 

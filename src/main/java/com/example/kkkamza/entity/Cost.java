@@ -15,10 +15,10 @@ public class Cost {
     private Long costId;
 
     @Column(name = "totalCost")
-    private Long totalCost;
+    private Integer totalCost;
 
     public Cost() {
-        this.totalCost = 0L;
+        this.totalCost = 0;
     }
 
 }

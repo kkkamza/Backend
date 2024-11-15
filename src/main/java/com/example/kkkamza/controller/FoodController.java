@@ -48,4 +48,9 @@ public class FoodController {
     public String start(){
         return foodService.start();
     }
+
+    @GetMapping("main")
+    public Integer getPrice(){
+        return foodService.getPrice();
+    }
 }

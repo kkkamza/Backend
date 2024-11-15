@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController
 @RequestMapping("/store")
@@ -36,17 +37,19 @@ public class MarketController {
         return new ResponseEntity<>(updatedMarket, HttpStatus.OK);
     }
 
-<<<<<<< HEAD
     // 상점 정보 확인
     @GetMapping("/{marketId}")
     public ResponseEntity<Market> getMarketInfo(@PathVariable Long marketId) {
         Market market = marketService.findMarketInfo(marketId);
         return ResponseEntity.ok(market);
     }
-=======
 
-
->>>>>>> dd76b4c88c3ce38a0f458526c913518d35853b57
+    // 상점 정보 목록 불러오기
+    @GetMapping("/list")
+    public List<Market> getAllMarkets() {
+        // 서비스에서 DB로부터 상점 목록을 가져옴
+        return marketService.getAllMarkets();
+    }
 
 
 }
